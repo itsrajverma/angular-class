@@ -1,0 +1,8 @@
+<div class="card">
+    <img src="{{ course.image }}">
+    <div class="card-body">
+        <h3 class="card-title">{{ course.name }}</h3>
+        <p class="card-text"> {{ course.price | currency:'USD' }}</p>
+        <a (click)="onButtonClick(course.id)" class="btn btn-primary">Buy Now</a>
+    </div>
+</div>
