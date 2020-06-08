@@ -9,16 +9,19 @@ import {CourseService} from './course.service';
 })
 export class AppComponent {
   title = ' My first Angular project';
+
   courses;
 
-  constructor(service:CourseService) {
-    this.courses=service.getCourses();
+  loadCourses(){
+      this.courses = [{ id :1,name:'c'},{ id:2,name:'java'},{ id:3,name:'PHP'}];
   }
 
-
-  onBuyClick(courseId){
-    console.log('Button : ',courseId)
+  AddCourses(){
+    this.courses.push({id:4,name:'Angular'})
   }
 
+  trackCourse(index,course){
+    return course ? course.id : undefined;
+  }
 
 }
